@@ -13,6 +13,9 @@
       "types": "./dist/index.d.ts"
     }
   },
+   "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsup src/index.ts --format esm,cjs --dts",

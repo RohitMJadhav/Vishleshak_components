@@ -5,8 +5,15 @@ interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
 }
 declare const Label: React.FC<LabelProps>;
 
-interface InputBoxProps extends React.InputHTMLAttributes<HTMLInputElement> {
-}
-declare const InputBox: React.FC<InputBoxProps>;
+type InputProps = {
+    label?: string;
+    name: string;
+    type?: string;
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    placeholder?: string;
+    className?: string;
+};
+declare const InputBox: React.FC<InputProps>;
 
 export { InputBox, Label };

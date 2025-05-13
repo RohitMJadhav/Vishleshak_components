@@ -33,8 +33,30 @@ var Label = ({ text, ...props }) => {
 
 // src/components/InputBox.tsx
 var import_jsx_runtime2 = require("react/jsx-runtime");
-var InputBox = (props) => {
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("input", { ...props });
+var InputBox = ({
+  label,
+  name,
+  type = "text",
+  value,
+  onChange,
+  placeholder,
+  className
+}) => {
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "flex flex-col gap-1", children: [
+    label && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("label", { htmlFor: name, className: "text-sm font-medium", children: label }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      "input",
+      {
+        id: name,
+        name,
+        type,
+        value,
+        onChange,
+        placeholder,
+        className: `border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${className}`
+      }
+    )
+  ] });
 };
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

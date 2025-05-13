@@ -1,7 +1,7 @@
 {
   "name": "vishleshak_components",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "private": false,
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -13,12 +13,15 @@
       "types": "./dist/index.d.ts"
     }
   },
-   "files": [
-    "dist"
-  ],
+  "typesVersions": {
+    "*": {
+      "*": ["dist/index.d.ts"]
+    }
+  },
+  "files": ["dist"],
   "scripts": {
     "dev": "vite",
-    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },

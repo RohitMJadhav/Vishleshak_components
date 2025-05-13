@@ -27,7 +27,7 @@ export default defineConfig({
     lib: {
       entry: 'src/index.ts',
       name: 'VishleshakComponents',
-      fileName: 'vishleshak_components',
+      // fileName: 'vishleshak_components',
       formats: ['es', 'umd'],
     },
     rollupOptions: {

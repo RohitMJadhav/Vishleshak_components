@@ -3,15 +3,26 @@
   "version": "1.0.0",
   "private": false,
   "type": "module",
-"main": "./dist/index.js",
-"module": "./dist/index.js",
-"types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": ["dist/index.d.ts"]
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+   "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist"],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
@@ -22,7 +33,8 @@
     "@tailwindcss/vite": "^4.1.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.6"
+    "tailwindcss": "^4.1.6",
+    "vishleshak_components": "github:RohitMJadhav/vishleshak_components"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
